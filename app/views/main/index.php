@@ -20,6 +20,7 @@ $this->title = 'Задачник';
                 <th>E-mail</th>
                 <th>Задача</th>
                 <th>Статус</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +30,8 @@ $this->title = 'Задачник';
                     <td> <?= $task['username'] ?> </td>
                     <td> <?= $task['email'] ?> </td>
                     <td> <?= $task['task'] ?> </td>
-                    <td> <?= $task['status'] ?> </td>
+                    <td> <?= $task['status'] == 'active' ? 'Активный' : 'Выполнено' ?> </td>
+                    <td> <?= $task['updated'] ? 'отредактировано администратором' : '' ?> </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

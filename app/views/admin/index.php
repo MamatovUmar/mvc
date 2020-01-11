@@ -31,7 +31,7 @@ $this->title = 'Админка';
                     <td> <?= $task['username'] ?> </td>
                     <td> <?= $task['email'] ?> </td>
                     <td> <?= $task['task'] ?> </td>
-                    <td> <?= $task['status'] ?> </td>
+                    <td> <?= $task['status'] == 'active' ? 'Активный' : 'Выполнено' ?> </td>
                     <td> <?= $task['updated'] ? 'отредактировано администратором' : '' ?> </td>
                     <td>
                         <a href="/admin/update-task/<?= $task['id'] ?>" class="btn btn-primary btn-sm"> <i class="mdi mdi-pencil"></i> </a>
