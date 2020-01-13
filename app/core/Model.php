@@ -3,7 +3,7 @@
 namespace app\core;
 
 
-class Model extends DataBase
+class Model
 {
 
 }

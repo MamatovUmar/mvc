@@ -1,3 +1,9 @@
+<?php
+
+use app\components\AssetsManager;
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $this->title ?></title>
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <?php AssetsManager::initCSS(); ?>
 </head>
 
 <body>
@@ -34,10 +40,7 @@
     </nav>
     <?= $content ?>
 
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/jquery.dataTables.min.js"></script>
-    <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
-    <script src="/assets/js/scripts.js"></script>
+    <?php AssetsManager::initJS(); ?>
 </body>
 
 </html>

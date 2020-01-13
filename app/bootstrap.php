@@ -1,5 +1,10 @@
 <?php
 
+define('APP', dirname(__FILE__));
+define('CONTROLLERS', APP . '/controllers/');
+
+define('CONTROLLER_NAMESPACE', 'app\controllers\\');
+
 use app\core\Router;
 
 spl_autoload_register(function($class){

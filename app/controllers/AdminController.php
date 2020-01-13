@@ -27,13 +27,13 @@ class AdminController extends Controller
 
     }
 
-    public function actionUpdateTask()
+    public function actionUpdateTask($id)
     {
         if(!Admin::isAuth()){
             $this->redirect('/login');
         }
 
-        $id = xss_clean($this->route['id']);
+        $id = xss_clean($id);
         $task = new Tasks();
 
         $this->render('update', [

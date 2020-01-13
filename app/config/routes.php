@@ -1,45 +1,18 @@
 <?php
 
 return [
-    '' => [
-        'controller' => 'main',
-        'action' => 'index' 
-    ],
-    'create-task' => [
-        'controller' => 'main',
-        'action' => 'createTask' 
-    ],
-    'task-add' => [
-        'controller' => 'main',
-        'action' => 'taskAdd' 
-    ],
-    'login' => [
-        'controller' => 'main',
-        'action' => 'login' 
-    ],
-    'logout' => [
-        'controller' => 'main',
-        'action' => 'logout' 
-    ],
-    'auth' => [
-        'controller' => 'main',
-        'action' => 'auth' 
-    ],
-    'admin' => [
-        'controller' => 'admin',
-        'action' => 'index'
-    ],
-    'admin/create-task' => [
-        'controller' => 'admin',
-        'action' => 'createTask'
-    ],
-    'admin/update-task' => [
-        'controller' => 'admin',
-        'action' => 'updateTask',
-        'id' => ''
-    ],
-    'admin/update' => [
-        'controller' => 'admin',
-        'action' => 'update',
-    ],
+    '' => 'main/index',
+    'error' => 'error/index',
+    'news' => 'news/index',
+    'news/(\w+)' => 'news/view',
+    'admin' => 'admin/index',
+    'login' => 'main/login',
+    'create-task' => 'main/createTask',
+    'task-add' => 'main/taskAdd',
+    'logout' => 'main/logout',
+    'auth' => 'main/auth',
+    'admin/create-task' => 'admin/createTask',
+    'admin/update-task/(\d+)' => 'admin/updateTask',
+    'admin/update' => 'admin/update'
+
 ];

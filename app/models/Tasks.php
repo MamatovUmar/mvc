@@ -2,10 +2,11 @@
 
 namespace app\models;
 
+use app\core\DataBase;
 use PDO;
 use app\core\Model;
 
-class Tasks extends Model
+class Tasks extends DataBase
 {   
 
     public function findAll()

@@ -12,8 +12,6 @@ class MainController extends Controller
     public function actionIndex()
     {
 
-        // $data = $db->column('select * from tasks where id = :id', $params);
-
         $task = new Tasks();
 
         $data = $task->findAll();

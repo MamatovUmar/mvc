@@ -10,12 +10,14 @@ abstract class Controller
     public $view;
     public $layout = 'default';
     public $errorController = 'main';
+	public $errorLayout = 'default';
 
     public function __construct($route) {
         $this->route = $route;
         $this->view = new View($route);
         $this->view->layout= $this->layout;
         $this->view->errorController= $this->errorController;
+        $this->view->errorLayout= $this->errorLayout;
     }
 
     public function render($title, $vars = []) {
@@ -31,5 +33,25 @@ abstract class Controller
     protected function redirect($url) {		
 		header('location: ' . $url);
 		exit;
-	}
+    }
+    
+    public function getMethod()
+    {
+        return Request::getMethod();
+    }
+
+    public function get($param = null)
+    {
+        if(is_null($param))
+        {
+            return $_GET;
+        }else {
+            return $_GET[$param] ?? $_GET;
+        }
+    }
+
+    public function post($param = null)
+    {
+        return $param ? $_POST[$param] : $_POST;
+    }
 }
