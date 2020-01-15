@@ -1,10 +1,14 @@
 <?php
 
+
+define('ROOT', dirname(__DIR__));
 define('APP', dirname(__FILE__));
 define('CONTROLLERS', APP . '/controllers/');
 
 define('CONTROLLER_NAMESPACE', 'app\controllers\\');
 
+// dump(ROOT);
+require "app/libs/rb.php";
 use app\core\Router;
 
 spl_autoload_register(function($class){

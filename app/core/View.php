@@ -4,6 +4,7 @@ namespace app\core;
 
 class View
 {
+	public $viewPath = 'app/views/';
 	public $route;
 	public $layout = 'default';
 	public $controller;
@@ -25,13 +26,13 @@ class View
 	public function render($view, $vars = [])
 	{
 		extract($vars);
-		$view = 'app/views/' . $this->controller . '/' . $view . '.php';
+		$view = $this->viewPath . $this->controller . '/' . $view . '.php';
 		
 		if (file_exists($view)) {
 			ob_start();
 			require $view;
 			$content = ob_get_clean();
-			require 'app/views/layouts/' . $this->layout . '.php';
+			require $this->viewPath . 'layouts/' . $this->layout . '.php';
 		} else {
 			$this->errorCode(404);
 		}
@@ -53,12 +54,12 @@ class View
 			default:
 				$message = 'Неизвесная ошибка';
 		}
-		$view = 'app/views/error/index.php';
+		$view = $this->viewPath . 'error/index.php';
 		if (file_exists($view)) {
 			ob_start();
 			require $view;
 			$content = ob_get_clean();
-			require 'app/views/layouts/' . $this->errorLayout . '.php';
+			require $this->viewPath . 'layouts/' . $this->errorLayout . '.php';
 			exit;
 		}
 	}

@@ -8,6 +8,7 @@ use app\core\Model;
 
 class Tasks extends DataBase
 {   
+    public $table = 'task';
 
     public function findAll()
     {

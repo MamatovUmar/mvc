@@ -24,12 +24,6 @@ abstract class Controller
         $this->view->render($title, $vars);
     }
 
-    public function actionError() 
-    {
-        // http_response_code(404);
-        $this->render('error');
-    }
-
     protected function redirect($url) {		
 		header('location: ' . $url);
 		exit;

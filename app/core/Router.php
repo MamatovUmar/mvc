@@ -11,7 +11,7 @@ class Router
 
 	public function __construct()
 	{
-		$routes = require 'app/config/routes.php';
+		$routes = require APP . '/config/routes.php';
 		foreach ($routes as $route => $params) {
 			$this->add($route, $params);
 		}
